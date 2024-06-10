@@ -1,8 +1,8 @@
 import * as crypto from 'node:crypto'
 
 /** Generates a random key. */
-export function generateKey() {
-  return crypto.randomBytes(32).toString('hex')
+export function generateKey(length?: number) {
+  return crypto.randomBytes(length ?? 32).toString('hex')
 }
 /** Encrypts the provided text using a secret key. */
 export function encrypt(text: string, secretKey: string) {

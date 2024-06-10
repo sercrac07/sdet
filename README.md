@@ -37,10 +37,10 @@ console.log('Encrypted:', encryptedData)
 console.log('Decrypted:', decryptedData)
 
 // Hash data
-const hashedData = await hashData('sensitive data', 10)
+const hashedData = await sdet.hashData('sensitive data', 10)
 
 // Compare hashed data
-const isMatch = await compareData('sensitive data', hashedData)
+const isMatch = await sdet.compareData('sensitive data', hashedData)
 
 console.log('Hashed data:', hashedData)
 console.log('Data match:', isMatch)
