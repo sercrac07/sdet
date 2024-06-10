@@ -1,5 +1,6 @@
 import * as crypto from 'node:crypto'
 
+/** Decrypts the provided encrypted text using a secret key. */
 export function decrypt(encrypted: { iv: string; content: string }, secretKey: string) {
   const decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(secretKey, 'hex'), Buffer.from(encrypted.iv, 'hex')) // Create a Decipher instance
 

@@ -1,9 +1,10 @@
 import * as crypto from 'node:crypto'
 
+/** Generates a random key. */
 export function generateKey() {
   return crypto.randomBytes(32).toString('hex')
 }
-
+/** Encrypts the provided text using a secret key. */
 export function encrypt(text: string, secretKey: string) {
   const iv = crypto.randomBytes(16) // Generate a random initialization vector (16 bytes for AES)
   const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(secretKey, 'hex'), iv) // Create a Cipher instance
